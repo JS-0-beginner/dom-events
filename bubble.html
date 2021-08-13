@@ -10,7 +10,7 @@
     
     <h1>Event Bubble</h1>
 
-    <section>
+    <section id="section-list">
         <h4>Bubble List</h4>
         <ul id="list-container">
             <li class="item">Lorem, ipsum.</li>
@@ -24,5 +24,99 @@
 <!--------------------------------------------------------------------------------- 
   /////////////////////////////// JS : Link \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  
  ---------------------------------------------------------------------------------->
+
+ <script>
+     /* 
+
+     //Immediate Propagation \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+     document.getElementById('second-item').addEventListener('click',
+     
+     function(event)
+     {
+            console.log('second item clicked');
+            
+            
+     }
+     
+     );
+     document.getElementById('second-item').addEventListener('click',
+     
+     function(event)
+     {
+            console.log('second item clicked');
+            event.stopImmediatePropagation();            
+            
+     }
+     
+     );
+     document.getElementById('second-item').addEventListener('click',
+     
+     function(event)
+     {
+            console.log('second item clicked');
+            
+            
+     }
+     
+     );
+     document.getElementById('second-item').addEventListener('click',
+     
+     function(event)
+     {
+            console.log('second item clicked');
+            
+            
+     }
+     
+     );
+     document.getElementById('second-item').addEventListener('click',
+     
+     function(event)
+     {
+            console.log('second item clicked');
+            
+            
+     }
+     
+     );
+     //Immediate Propagation \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+    */
+
+     //second-li
+     document.getElementById('second-item').addEventListener('click',
+     
+     function(event)
+     {
+            console.log('second item clicked');
+            event.stopPropagation();
+            
+     }
+     
+     );
+
+     //parent-ul
+     document.getElementById('list-container').addEventListener('click',
+     
+     function()
+     {
+        console.log('ul clicked');
+     }
+     
+     );
+
+     //grand-parent-ul
+     document.getElementById('section-list').addEventListener('click',
+     
+     function()
+     {
+        console.log('section clicked');
+     }
+     
+     );
+
+ </script>
+
 </body>
 </html>
