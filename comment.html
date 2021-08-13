@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+</head>
+<body>
+
+    <h1>Add Your Comment Please !!!</h1>
+
+    <section>
+        <h3>Your Comments</h3>
+
+        <div id="comment-container">
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic a possimus minus fuga accusantium voluptas eveniet, explicabo esse itaque magnam.</p>
+
+            <p>Consequuntur dicta eius natus laboriosam cumque! Exercitationem minima sint vitae, vel iure eum alias fuga, eveniet deleniti nam, perferendis quam?</p>
+
+        </div>
+
+        <div>
+            <p 
+            style="
+            color: brown;
+            font-weight: bold;">
+            add comments...
+        </p>
+            <textarea name="" id="new-comment" cols="80" rows="3"></textarea>
+            <br>
+            <button id="post-comment">Post</button>
+        </div>
+    </section>
+    
+<!--------------------------------------------------------------------------------- 
+  /////////////////////////////// JS : Link \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  
+ ---------------------------------------------------------------------------------->    <script>
+     //(1)
+     //add the button id event handler
+     document.getElementById('post-comment').addEventListener('click',
+
+     function()
+     {
+        //(2)
+        //set the textarea (form-decorators) id 
+         const comments = document.getElementById('new-comment');
+         //  console.log('OK');
+         //  console.log(comments.value);
+        
+        //(3)
+        //set textarea (form-decorators) .value in another variable
+         const userComment = comments.value;
+
+        //(4)
+        //create new element
+        const newComment = document.createElement('p');
+
+        //(5)
+        //add the textarea (form-decorators) .value to the new element
+         newComment.innerText = comments.value;
+
+         //(6)
+         //appendChild the new element to it’s parent id
+         const commentContainer = document.getElementById('comment-container');
+         commentContainer.appendChild(newComment);
+
+         //(7)
+         //null the textarea (form-decorators) .value
+         comments.value = '';
+     }
+
+     )
+ </script>
+</body>
+</html>

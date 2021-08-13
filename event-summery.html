@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Summery</title>
+    <style>
+        .little-buttons
+        {
+            margin-left: 100px;
+            margin-top: 30px;
+        }
+        h2
+        {
+            text-align: center;
+        }
+        input
+        {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 id="careful"></h2>
+
+    <input id="input-box" type="text">
+
+    <button class="update-buttons" id="update">Update</button>
+
+    <button class="little-buttons" onclick="ready()">Ready</button>
+
+    <button class="little-buttons" id="direct">Reveal</button>
+    
+<!--------------------------------------------------------------------------------- 
+  /////////////////////////////// JS : Link \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  
+ ---------------------------------------------------------------------------------->
+<script>
+    // In-Line
+    function ready()
+    {
+        const beCareful = document.getElementById('careful');
+        beCareful.innerText='Be careful time and tide waits for none.'
+    }
+    // Direct
+    document.getElementById('direct').addEventListener('click',
+
+    function()
+    {
+        const beCareful = document.getElementById('careful');
+        beCareful.innerText='Tell everything directly.';
+    }
+    
+    )
+    // Direct
+    document.getElementById('update').addEventListener('click',
+    
+    function()
+    {
+        const inputBox = document.getElementById('input-box');
+        const beCareful = document.getElementById('careful');
+        beCareful.innerText=inputBox.value;
+        inputBox.value = '';
+        // console.log(inputBox.value);
+    }
+
+    )
+</script>
+
+</body>
+</html>
